@@ -23,3 +23,20 @@ int Trilho::get_coord(std::string name){
     return -1;
 
 }
+
+int Trilho::get_xdir(){
+    int delta_x = x_end-x_start;
+    return (int)(delta_x>0) - (int)(delta_x<0);
+}
+
+int Trilho::get_ydir(){
+    int delta_y = y_end-y_start;
+    return (int)(delta_y>0) - (int)(delta_y<0);
+}
+
+bool Trilho::is_the_end(int x, int y){
+    return x==x_end && y==y_end;
+}
+bool Trilho::is_the_start(int x, int y){
+    return x==x_start && y==y_start;
+}

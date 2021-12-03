@@ -36,6 +36,9 @@ public:
     QLabel *label_trilho1_2;
     QLabel *label_trilho2_2;
     QLabel *label_trem2;
+    QLabel *label_trem3;
+    QLabel *label_trem4;
+    QLabel *label_trem5;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -44,7 +47,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(641, 300);
+        MainWindow->resize(917, 490);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         label_trem1 = new QLabel(centralWidget);
@@ -69,10 +72,10 @@ public:
         label_trilho4->setStyleSheet(QString::fromUtf8("QLabel { background: yellow}"));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(230, 180, 99, 27));
+        pushButton->setGeometry(QRect(60, 0, 99, 27));
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(350, 180, 98, 27));
+        pushButton_2->setGeometry(QRect(160, 0, 98, 27));
         label_trilho4_2 = new QLabel(centralWidget);
         label_trilho4_2->setObjectName(QString::fromUtf8("label_trilho4_2"));
         label_trilho4_2->setGeometry(QRect(600, 30, 21, 137));
@@ -89,6 +92,18 @@ public:
         label_trem2->setObjectName(QString::fromUtf8("label_trem2"));
         label_trem2->setGeometry(QRect(330, 30, 21, 17));
         label_trem2->setStyleSheet(QString::fromUtf8("QLabel { background: red}"));
+        label_trem3 = new QLabel(centralWidget);
+        label_trem3->setObjectName(QString::fromUtf8("label_trem3"));
+        label_trem3->setGeometry(QRect(600, 30, 21, 17));
+        label_trem3->setStyleSheet(QString::fromUtf8("QLabel { background: red}"));
+        label_trem4 = new QLabel(centralWidget);
+        label_trem4->setObjectName(QString::fromUtf8("label_trem4"));
+        label_trem4->setGeometry(QRect(60, 150, 21, 17));
+        label_trem4->setStyleSheet(QString::fromUtf8("QLabel { background: red}"));
+        label_trem5 = new QLabel(centralWidget);
+        label_trem5->setObjectName(QString::fromUtf8("label_trem5"));
+        label_trem5->setGeometry(QRect(330, 150, 21, 17));
+        label_trem5->setStyleSheet(QString::fromUtf8("QLabel { background: red}"));
         MainWindow->setCentralWidget(centralWidget);
         label_trilho1->raise();
         label_trilho2->raise();
@@ -101,9 +116,12 @@ public:
         label_trilho1_2->raise();
         label_trilho2_2->raise();
         label_trem2->raise();
+        label_trem3->raise();
+        label_trem4->raise();
+        label_trem5->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 641, 22));
+        menuBar->setGeometry(QRect(0, 0, 917, 22));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -131,6 +149,9 @@ public:
         label_trilho1_2->setText(QString());
         label_trilho2_2->setText(QString());
         label_trem2->setText(QApplication::translate("MainWindow", "T2", nullptr));
+        label_trem3->setText(QApplication::translate("MainWindow", "T2", nullptr));
+        label_trem4->setText(QApplication::translate("MainWindow", "T2", nullptr));
+        label_trem5->setText(QApplication::translate("MainWindow", "T2", nullptr));
     } // retranslateUi
 
 };

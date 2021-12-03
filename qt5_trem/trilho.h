@@ -13,6 +13,10 @@ public:
     Trilho(int x_start, int y_start, int x_end, int y_end);
 
     int get_coord(std::string name);
+    int get_xdir();
+    int get_ydir();
+    bool is_the_end(int x, int y);
+    bool is_the_start(int x, int y);
 };
 
 #endif // TRILHO_H
