@@ -2,6 +2,7 @@
 #define TRILHO_H
 
 #include <string>
+#include <mutex>
 
 class Trilho
 {
@@ -9,6 +10,8 @@ private:
     int x_start, y_start, x_end, y_end;
 
 public:
+    std::mutex mtx;
+
     Trilho();
     Trilho(int x_start, int y_start, int x_end, int y_end);
 

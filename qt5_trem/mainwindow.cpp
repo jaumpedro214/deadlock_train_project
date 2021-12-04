@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "trem.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -8,7 +9,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     //Cria o trem com seu (ID, posição X, posição Y)
-
     trem1 = new Trem(1, std::vector<size_t>{ 0, 4, 8, 7, 3 } );
     trem2 = new Trem(2, std::vector<size_t>{ 1, 5, 10, 9, 4 } );
     trem3 = new Trem(3, std::vector<size_t>{ 2, 6, 12, 11, 5 } );

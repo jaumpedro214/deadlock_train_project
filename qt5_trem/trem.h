@@ -5,6 +5,7 @@
 #include <vector>
 #include "trilho.h"
 
+
 /*
  * Classe Trem herda QThread
  * Classe Trem passa a ser uma thread.
@@ -18,6 +19,9 @@ public:
     Trem(int,int,int);
     Trem(int, const std::vector<size_t> &path_malha);
     void run();         //função a ser executada pela thread
+    void andar_no_trilho( size_t id );
+    bool requerir_trilhos();
+    void liberar_trilho( size_t id );
 
 
 //Cria um sinal
