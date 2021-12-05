@@ -20,3 +20,7 @@ Para lidar com a *condição de corrida*, cada trilho possui um Mutex, que é tr
 Para evitar *Deadlocks*, um trem só é capaz de realizar uma volta se conseguir, com sucesso, travar todos os trilhos necessários. 
 Ou seja, antes de cada volta, o trem tentará travar todos os trilhos que necessita, de forma a garantir que *sua volta será concluída*, caso não consiga, o trem abdica
 da volta e libera qualquer trilho que tenha ocasionalmente conseguido travar.
+
+[Vídeo explicativo](https://youtu.be/9qnjwiyxczo)
+
+![](https://github.com/jaumpedro214/deadlock_train_project/blob/main/projeto_trens_gif.gif)
