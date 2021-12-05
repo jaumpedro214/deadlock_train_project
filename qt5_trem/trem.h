@@ -13,6 +13,7 @@
  * Para parar a execução da função RUN da thread, basta executar a função TERMINATE.
  *
 */
+
 class Trem: public QThread{
  Q_OBJECT
 public:
@@ -22,6 +23,7 @@ public:
     void andar_no_trilho( size_t id );
     bool requerir_trilhos();
     void liberar_trilho( size_t id );
+    void set_velocidade( int v );
 
 
 //Cria um sinal

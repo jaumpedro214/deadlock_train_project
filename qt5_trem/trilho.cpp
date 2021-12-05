@@ -37,6 +37,7 @@ int Trilho::get_ydir(){
 bool Trilho::is_the_end(int x, int y){
     return x==x_end && y==y_end;
 }
+
 bool Trilho::is_the_start(int x, int y){
     return x==x_start && y==y_start;
 }

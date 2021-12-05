@@ -26,6 +26,30 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_VelocidadeTrem01_actionTriggered(int action);
+
+    void on_VelocidadeTrem01_sliderMoved(int position);
+
+    void on_VelocidadeTrem01_valueChanged(int value);
+
+    void on_VelocidadeTrem01_sliderReleased();
+
+    void on_VelocidadeTrem02_sliderReleased();
+
+    void on_VelocidadeTrem03_sliderReleased();
+
+    void on_VelocidadeTrem04_sliderReleased();
+
+    void on_VelocidadeTrem05_sliderReleased();
+
+    void on_VelocidadeTrem02_valueChanged(int value);
+
+    void on_VelocidadeTrem03_valueChanged(int value);
+
+    void on_VelocidadeTrem04_valueChanged(int value);
+
+    void on_VelocidadeTrem05_valueChanged(int value);
+
 private:
     Ui::MainWindow *ui;
 

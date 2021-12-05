@@ -2,13 +2,16 @@
 #include "ui_mainwindow.h"
 #include "trem.h"
 
+#include <iostream>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
-    //Cria o trem com seu (ID, posição X, posição Y)
+    //Cria o trem com seu ID
+    //E a sequência de trilhos que ele percorre.
     trem1 = new Trem(1, std::vector<size_t>{ 0, 4, 8, 7, 3 } );
     trem2 = new Trem(2, std::vector<size_t>{ 1, 5, 10, 9, 4 } );
     trem3 = new Trem(3, std::vector<size_t>{ 2, 6, 12, 11, 5 } );
@@ -80,4 +83,66 @@ void MainWindow::on_pushButton_2_clicked()
     trem3->terminate();
     trem4->terminate();
     trem5->terminate();
+}
+
+
+// Funções dos Sliders
+void MainWindow::on_VelocidadeTrem01_actionTriggered(int action)
+{
+
+}
+
+void MainWindow::on_VelocidadeTrem01_sliderMoved(int position)
+{
+
+}
+
+void MainWindow::on_VelocidadeTrem01_sliderReleased()
+{
+    trem1->set_velocidade( (int) ui->VelocidadeTrem01->value() );
+}
+
+void MainWindow::on_VelocidadeTrem02_sliderReleased()
+{
+    trem2->set_velocidade( (int) ui->VelocidadeTrem02->value() );
+}
+
+void MainWindow::on_VelocidadeTrem03_sliderReleased()
+{
+    trem3->set_velocidade( (int) ui->VelocidadeTrem03->value() );
+}
+
+void MainWindow::on_VelocidadeTrem04_sliderReleased()
+{
+    trem4->set_velocidade( (int) ui->VelocidadeTrem04->value() );
+}
+
+void MainWindow::on_VelocidadeTrem05_sliderReleased()
+{
+    trem5->set_velocidade( (int) ui->VelocidadeTrem05->value() );
+}
+
+void MainWindow::on_VelocidadeTrem01_valueChanged(int value)
+{
+    trem1->set_velocidade( (int) ui->VelocidadeTrem01->value() );
+}
+
+void MainWindow::on_VelocidadeTrem02_valueChanged(int value)
+{
+    trem2->set_velocidade( (int) ui->VelocidadeTrem02->value() );
+}
+
+void MainWindow::on_VelocidadeTrem03_valueChanged(int value)
+{
+    trem3->set_velocidade( (int) ui->VelocidadeTrem03->value() );
+}
+
+void MainWindow::on_VelocidadeTrem04_valueChanged(int value)
+{
+    trem4->set_velocidade( (int) ui->VelocidadeTrem04->value() );
+}
+
+void MainWindow::on_VelocidadeTrem05_valueChanged(int value)
+{
+    trem5->set_velocidade( (int) ui->VelocidadeTrem05->value() );
 }

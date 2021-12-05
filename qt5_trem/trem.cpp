@@ -57,12 +57,11 @@ Trem::Trem(int ID, int x, int y){
 void Trem::run(){
     int pos_path = 0;
     int pos_malha = 0;
-    //int reverser = 1;
-    int num_trilhos = path_malha.size();
 
     pos_malha = path_malha[ pos_path ];
     x = malha[ pos_malha ]->get_coord("x_start");
     y = malha[ pos_malha ]->get_coord("y_start");
+    emit updateGUI(ID, x,y);
 
     while(true){
         if( requerir_trilhos() ){
@@ -81,20 +80,22 @@ bool Trem::requerir_trilhos(){
     int pos_path;
     bool result = true;
 
-    //std::cout << ID << ") Requerindo trilhos: ";
+    //Requerindo todos os trilhos
     for( pos_path=0; pos_path<path_malha.size(); pos_path++ ){
         pos_malha = path_malha[ pos_path ];
-        //std::cout << pos_malha << " ";
-        //std::cout << "\n\n";
-
         result = result && malha[ pos_malha ]->mtx.try_lock();
+
+        // Sai do loop se não conseguiu algum trilho
         if( !result )
             break;
     }
 
+    //Se conseguiu todos os trilhos, retorna true
     if( result )
         return true;
 
+    //Caso contrário, libera os trilhos que conseguiu
+    //e retorna falso
     for( int i = 0; i < pos_path; i++ ){
         liberar_trilho( path_malha[ i ] );
     }
@@ -125,6 +126,10 @@ void Trem::andar_no_trilho( size_t id ){
            !malha[id]->is_the_start(x,y)
          );
 
+}
+
+void Trem::set_velocidade( int v ){
+    velocidade = v;
 }
 
 
